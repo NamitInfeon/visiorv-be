@@ -37,7 +37,7 @@ require("dotenv").config();
       // Entities
       entities: [__dirname + "/**/*.entity{.ts,.js}"],
       // Auto sync (disable in production if possible)
-      synchronize: false,
+      synchronize: process.env.NODE_ENV !== "production",
       // Connection pooling - CRITICAL FOR PERFORMANCE
       poolSize: 20,
       maxQueryExecutionTime: 60000, // 60 seconds timeout
@@ -48,8 +48,7 @@ require("dotenv").config();
         duration: 300000, // 5 minutes cache
       },
       // Logging - disable for production
-      logging:
-        process.env.NODE_ENV !== "production" ? ["error", "warn"] : false,
+      logging: process.env.NODE_ENV !== "production" ? ["error", "warn"] : false,
       // Required for TiDB Cloud / secure MySQL connections
       ssl: {
         rejectUnauthorized: false,
