@@ -51,7 +51,7 @@ export class EmailService {
   async sendOtpEmail(to: string, otp: number): Promise<boolean> {
     try {
       const mailOptions = {
-        from: "sarvadnya.gabhe@infeonit.in",
+        from: "sarvadnya.gabhe@visiorg.in",
         to: to,
         subject: "Your OTP Code",
         text: `Your OTP code is ${otp}. It will expire in 10 minutes.`,

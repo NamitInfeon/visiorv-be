@@ -21,6 +21,17 @@ export class Achievement {
   image: MediaItem;
 }
 
+export class WhyChooseUs {
+  @ApiProperty()
+  key: string;
+
+  @ApiProperty()
+  value: string;
+
+  @ApiProperty()
+  icon: string;
+}
+
 export class AboutusDTO {
   id: number;
 
@@ -54,11 +65,8 @@ export class AboutusDTO {
   @ApiProperty()
   ourValues: string;
 
-  @ApiProperty({ type: [MediaItem] })
-  whyChooseUsImage: MediaItem[];
-
-  @ApiProperty()
-  whyChooseUs: string;
+  @ApiProperty({ type: [WhyChooseUs] })
+  whyChooseUs: WhyChooseUs[];
 
   @ApiProperty()
   bannerTitle: string;

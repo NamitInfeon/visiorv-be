@@ -7,7 +7,7 @@ import {
   UpdateDateColumn,
 } from "typeorm";
 import { achievementType, status } from "../../global/system.enums";
-import { MediaItem } from "./aboutus.dto";
+import { MediaItem, WhyChooseUs } from "./aboutus.dto";
 
 @Entity("aboutus")
 export class EN_AboutUs {
@@ -64,11 +64,7 @@ export class EN_AboutUs {
 
   @ApiProperty()
   @Column({ type: "json", nullable: true, default: null })
-  whyChooseUsImage: MediaItem[];
-
-  @ApiProperty()
-  @Column({ type: "longtext", nullable: true, default: null })
-  whyChooseUs: string;
+  whyChooseUs: WhyChooseUs[];
 
   @ApiProperty()
   @Column({ type: "varchar", length: 255, nullable: true, default: null })
